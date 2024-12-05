@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 <!--
-    Program Name: TpAssignment3.html
+    Program Name: TpAssignment4.html
     Author: Maria Ortiz
-    Date Created: 10/10/2024
-    Date last updated: 10/19/2024
-    Version: TpAssignment3.html 5.0
+    Date Created: 11/01/2024
+    Date last updated: 12/03/2024
+    Version: TpAssignment4.html 5.0
     Purpose: Homework 2 HTML new patient registration form
 
 -->
 
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="TpAssignment3.css"> <!-- link to css file-->
+        <link rel="stylesheet" href="TpAssignment4.css"> <!-- link to css file-->
 
         <!-- will dsiplay text in brower's tab-->
         <title>Spindle Health | New Patient Registration Form</title>
@@ -39,8 +38,18 @@
             </tr>
             </table>
         </header>
-
         <hr>
+<!-- shows welcome message for users, connects to cookie in JS-->
+        <center>
+            <span id ="welcome1"></span>
+            <span id ="welcome2"></span>
+        </center>
+
+<!-- code for iframe, shows links to another clickable website.-->
+        <div class="iframe-container">
+        <iframe class="frame" src="https://darksideoftheword.com/blog/2024/5/23/book-review-one-dark-window-rachel-gillig" 
+        frameborder="0"></iframe>
+        </div>
         <!-- form will begin here-->
         <form name ="signup" id = "signup" action="Confirmation.html">
             <center>
@@ -543,10 +552,9 @@
          </form>
         </hr>
         <!-- footer goes here(contains website link)-->
-        <footer>
-            <p id="footer"> | &#169 2024 Spindle Health| <a href="https://www.goodreads.com/book/show/58340706-one-dark-window" target="_blank" rel="noopener norefferer">Contact Us</a></p>
-        </footer>
-        <script src="TpAssignment3.js"></script>
+       <iframe src="footer.html" width="100%" height="100px" title="footer"></iframe>
+    <!-- connects to JS-->
+        <script src="TpAssignment4.js"></script>
     <!--- shows an alert box -->
         <div id="alert-box">
             <div id ="alert-content">
