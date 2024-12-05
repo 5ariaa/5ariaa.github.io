@@ -1,16 +1,24 @@
 /*
-    Program Name: TpAssignment3.css
+    Program Name: TpAssignment4.css
     Author: Maria Ortiz
-    Date Created: 10/10/2024
-    Date last updated: 10/10/2024
-    Version: TpAssignment3.css 2.0
-    Purpose: Homework 3 CSS new patient registration form
+    Date Created: 11/01/2024
+    Date last updated: 12/03/2024
+    Version: TpAssignment4.css 2.0
+    Purpose: Homework 4 CSS new patient registration form
 */
 
 
 header {
+    position: sticky;
+    top: 0;
     width: 100%;
     background-color:rgba(165, 84, 84, 0.128);
+    transition: background-color 0.4 easy-in-out;
+    z-index: 1000;
+}
+header.scrolled {
+    background-color: rgba(165, 84, 84, 0.128);
+    opacity: 1;
 }
 
 body {
@@ -175,7 +183,7 @@ td.outputdata {
     text-align: center;
 }
 #alert-content h4 {
-    margin-top: 20%;
+    margin-top: 20px;
     font-size: 20px;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -197,4 +205,37 @@ td.outputdata {
     margin-top: 20px;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* this styles the iframe */
+
+.iframe-container {
+    position: absolute;
+    top: 25%;
+    right: 15px;
+    width: 25%;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.iframe-container iframe {
+    width: 85%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+#welcome1 {
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: normal;
+}
+
+#welcome2 {
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: normal;
 }
