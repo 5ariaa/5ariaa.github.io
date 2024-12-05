@@ -1,10 +1,10 @@
 /*
-    Program Name: TpAssignment3.js
+    Program Name: TpAssignment4.js
     Author: Maria Ortiz
-    Date Created: 10/12/2024
-    Date last updated: 10/19/2024
-    Version: TpAssignment3.js 5.0
-    Purpose: Homework 3 JS new patient registration form
+    Date Created: 11/01/2024
+    Date last updated: 12/03/2024
+    Version: TpAssignment4.js 5.0
+    Purpose: Homework 4 JS new patient registration form
 */
 
 // dynamic date JS code //
@@ -396,4 +396,72 @@ function validateAll() {
     else {
         showAlert();
     }
+}
+
+// set up cookie which will remember past input//
+function setCookie (name,cvalue, expireDays) {
+    var day = new Date();
+    day.setTime(day.getTime() + (expireDays*24*60*60*1000));
+    var expires = "expires=" + day.toUTCString();
+    document.cookie = name + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(name) {
+    var cookieName = name + "=";
+    var cookies = document.cookie.split(';');
+
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+            while(cookie.charAt(0) == ' ') {
+              cookie = cookie.substring(1);  
+            }
+            if (cookie.indexOf(cookieName) == 0) {
+                return cookie.substring(cookieName.length, cookie.length);
+            }
+        }
+        return " ";
+}
+
+var inputs = [
+    {id: "fname", cookieName: "firstName"},
+    {id: "minit", cookieName: "middleName"}, 
+    {id: "lname", cookieName: "lastName"},
+    {id: "dob", cookieName: "dob"},
+    {id: "ssn", cookieName: "ssn"},
+    {id: "address1", cookieName: "address1"},
+    {id: "city", cookieName: "city"},
+    {id: "zipcode", cookieName: "zipcode"},
+    {id: "email", cookieName: "email"},
+    {id: "phnum", cookieName: "phone"},
+    {id: "uname", cookieName: "userName"}
+]
+
+inputs.forEach(function(input) {
+    var inputElement= document.getElementById(input.id);
+    //input fields are prefilled with cookie value
+
+    var cookieValue = getCookie (input.cookieName);
+    if (cookieValue !==" ") {
+        inputElement.value = cookieValue;
+    }
+
+    //sets cookie with input value when input changes
+
+    inputElement.addEventListener ("input", function(){
+        setCookie(input.cookieName, inputElement.value, 30);
+    });
+});
+
+// greeets the user with their presaved name + message if cookie is set
+
+var firstName = getCookie ("firstName");
+if (firstName !== " ") {
+    document.getElementById("welcome1").innerHTML = "Welcome back, " + firstName + "! </br>";
+    document.getElementById("welcome2").innerHTML = 
+    "<a href= '#' id = 'new-user'>Soemone else? Click here for a new form. </a>";
+    document.getElementById("new-user").addEventListener("click", function(){
+        inputs.forEach(function(input){
+            setCookie(input.cookieName, "", -1);
+        })
+        location.reload();
+    })
 }
