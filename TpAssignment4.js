@@ -1,6 +1,6 @@
 /*
     Program Name: TpAssignment4.js
-    Author: Maria Ortiz
+    Author: Maria Ortiz 
     Date Created: 11/01/2024
     Date last updated: 12/03/2024
     Version: TpAssignment4.js 5.0
